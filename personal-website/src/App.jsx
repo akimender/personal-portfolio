@@ -1,33 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+import { motion, useInView } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
+
+// COMPONENT IMPORTS
+import FullNameTitleText from './components/FullNameTitleText';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const titleText = "Welcome to Andrew's Website".split(" ");
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log('Scroll position:', window.scrollY);
+      if (window.scrollY > 10) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+    };
+
+    // Add event listener to handle scroll event
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll); // Removes event listener after user scrolls
+  }, []);
 
   return (
     <>
+    
+      {/* Animates out "Welcome to Andrew's Website" */}
+      <FullNameTitleText titleText={titleText} isVisible={isVisible} />
+
+      {/* Arrow down icon */}
+
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <p>HELLO</p>
+        <div className="flex justify-center">
+          <img src={reactLogo} alt="React Logo" className="" />
+          <img src={viteLogo} alt="Vite Logo" className="" />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }

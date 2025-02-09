@@ -5,12 +5,12 @@ import './App.css';
 import { motion, useInView } from 'framer-motion';
 
 // COMPONENT IMPORTS
-import FullNameTitleText from './components/FullNameTitleText';
 import PortfolioDisplay from './components/PortfolioDisplay';
 import Dashboard from './components/Dashboard';
+import ContactSection from './components/ContactSection';
+import IntroScreen from './components/IntroScreen';
 
 function App() {
-  const titleText = "Welcome to Andrew's Website!".split(" ");
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -33,12 +33,16 @@ function App() {
       <div className="main-container">
         <Dashboard />
         <div className="intro-background-container">
-          {/* Animates out "Welcome to Andrew's Website" */}
-          <FullNameTitleText titleText={titleText} />
+          <IntroScreen />
         </div>
-        {/* Portfolio Display */}
-        <PortfolioDisplay isVisible={isVisible} />
+        <div className="portfolio-background-container">
+          {/* Portfolio Display */}
+          <PortfolioDisplay isVisible={isVisible} />
+        </div>
+
+        <ContactSection />
       </div>
+      
     </>
   )
 }

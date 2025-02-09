@@ -1,0 +1,15 @@
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+    gap: 20px; /* Space between grid items */
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-item {
+    background-color: lightgrey; /* Example background color */
+    padding: 20px; /* Example padding */
+    border-radius: 8px; /* Example border radius */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Example box shadow */
+
+}

@@ -1,13 +1,9 @@
 import React from 'react';
 
 const Dashboard = () => {
-    const styles = {
-
-    };
-
     return (
         <div className="dashboard-container">
-            <h1>Dashboard</h1>
+            <p>Dashboard</p>
         </div>
     );
 };

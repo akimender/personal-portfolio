@@ -17,6 +17,7 @@ const IntroScreen = () => {
                     border: "2px white solid",
                     objectFit: "cover",
                 }}
+                className="no-select"
             />
 
             <FullNameTitleText />

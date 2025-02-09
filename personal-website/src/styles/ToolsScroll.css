@@ -1,0 +1,76 @@
+/* Container to limit the scroll width */
+.tools-container {
+    --logo-width: 150px; /* Width of each logo */
+    --logo-height: 150px; /* Height of each logo */
+    --gap: calc(var(--logo-width) / 4); /* Space between logos, calculated based on logo width */
+    --duration: 30s; /* Duration of the scroll animation */
+    --scroll-start: calc(100% + var(--gap)); /* Start position of scroll animation */
+    --scroll-end: calc(-100% - var(--gap)); /* End position of scroll animation */
+    display: flex; /* Aligns children in a row */
+    flex-direction: column; /* Stacks content vertically */
+    gap: var(--gap); /* Adds space between child elements */
+    margin: auto; /* Centers container horizontally */
+    min-width: 70vw;
+    max-width: 100vw; /* Limits width to the viewport */
+}
+
+/* Scrolling area */
+.logo-scroll {
+    display: flex; /* Aligns logos in a horizontal row */
+    overflow: hidden; /* Hides overflow to create infinite scroll effect */
+    user-select: none; /* Disables text selection */
+    gap: var(--gap); /* Space between logos */
+    mask-image: linear-gradient(
+        to right,
+        hsl(0 0% 0% / 0),
+        hsl(0 0% 0% / 1) 30%,
+        hsl(0 0% 0% / 1) 70%,
+        hsl(0 0% 0% / 0)
+    ); /* Adds a gradient mask to fade edges */
+}
+
+.logo-scroll__wrapper {
+    flex-shrink: 0; /* Prevents wrapper from shrinking */
+    display: flex; /* Aligns logos horizontally */
+    align-items: center; /* Centers logos vertically */
+    justify-content: space-around; /* Distributes logos evenly */
+    gap: var(--gap); /* Adds spacing between logos */
+    min-width: calc(100% * 2); /* Wrapper width covers twice the viewport */
+    animation: scroll var(--duration) linear infinite; /* Infinite scrolling animation */
+}
+
+.logo-scroll__wrapper:nth-child(even) {
+    margin-left: calc(var(--logo-width) / -2); /* Offsets even wrappers for smooth scroll overlap */
+}
+
+.logo-scroll__wrapper:hover {
+    animation-play-state: running; /* Ensure animation continues when hovered */
+}
+
+/* Logo styling */
+.logo-item {
+    width: var(--logo-width); /* Sets width of each logo */
+    height: var(--logo-height); /* Sets height of each logo */
+    /* transition: transform 0.5s; Smooth scaling effect */
+    border-radius: 4px; /* Rounds the logo corners */
+    padding: 4vh;
+}
+
+.logo-scroll .logo-item:hover {
+    transform: scale(1.00); /* Slightly enlarges logo when hovered */
+}
+
+/* Infinite scroll animation */
+@keyframes scroll {
+    from {
+        transform: translateX(var(--scroll-start)); /* Animation start position */
+    }
+    to {
+        transform: translateX(var(--scroll-end)); /* Animation end position */
+    }
+}
+
+img {
+    width: var(--logo-width);
+    height: var(--logo-height);
+}

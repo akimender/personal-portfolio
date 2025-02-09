@@ -9,17 +9,21 @@ import PortfolioDisplay from './components/PortfolioDisplay';
 import Dashboard from './components/Dashboard';
 import ContactSection from './components/ContactSection';
 import IntroScreen from './components/IntroScreen';
+import About from './components/About';
+import Skills from './components/Skills';
 
 function App() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isAboutVisible, setIsAboutVisible] = useState(false);
+  const [isProjectsVisible, setIsProjectsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       console.log('Scroll position:', window.scrollY);
-      if (window.scrollY > 120) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
+      if (window.scrollY > 450) {
+        setIsProjectsVisible(true);
+      }
+      if (window.scrollY > 100) {
+        setIsAboutVisible(true);
       }
     };
 
@@ -35,9 +39,18 @@ function App() {
         <div className="intro-background-container">
           <IntroScreen />
         </div>
+
+        <div className="about-background-container">
+          <About isAboutVisible={isAboutVisible} />
+        </div>
+
+        <div className="skills-background-container">
+          <Skills />
+        </div>
+
         <div className="portfolio-background-container">
           {/* Portfolio Display */}
-          <PortfolioDisplay isVisible={isVisible} />
+          <PortfolioDisplay isProjectsVisible={isProjectsVisible} />
         </div>
 
         <ContactSection />

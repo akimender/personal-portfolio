@@ -2,13 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import '../styles/PortfolioDisplay.css';
 
-const PortfolioDisplay = ({ isVisible }) => {
+const PortfolioDisplay = ({ isProjectsVisible }) => {
     return (
         <div style={{ height: '100vh' }}>
             <motion.div
                 initial={{ opacity: 0 }}
-                animate={{ opacity: isVisible ? 1 : 0 }}
-                transition={{ duration: 0.8 }}
+                animate={{ opacity: isProjectsVisible ? 1 : 0 }}
+                transition={{ duration: 1.5 }}
             >
                 <h1>Projects</h1>
                 <div class="portfolio-container">

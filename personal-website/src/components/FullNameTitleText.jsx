@@ -5,7 +5,7 @@ const FullNameTitleText = () => {
   const titleText = "Andrew Kim".split(" ");
 
   return (
-    <div className="title-text">
+    <div className="title-text no-select">
       {titleText.map((el, i) => (
         <motion.span
           initial={{ opacity: 0 }}
@@ -20,7 +20,7 @@ const FullNameTitleText = () => {
           {el}{" "}
         </motion.span>
       ))}
-      <p>Brown University, Applied Mathematics & Computer Science</p>
+      <p className="no-select">Brown University, Applied Mathematics & Computer Science</p>
     </div>
   );
 };

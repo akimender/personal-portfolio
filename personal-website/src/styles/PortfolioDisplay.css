@@ -8,8 +8,9 @@
 
 .portfolio-item {
     background-color: lightgrey; /* Example background color */
+    width: 40vh;
+    height: 35vh;
     padding: 20px; /* Example padding */
     border-radius: 8px; /* Example border radius */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Example box shadow */
-
 }

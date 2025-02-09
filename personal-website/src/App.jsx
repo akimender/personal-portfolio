@@ -3,22 +3,23 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import { motion, useInView } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
 
 // COMPONENT IMPORTS
 import FullNameTitleText from './components/FullNameTitleText';
+import PortfolioDisplay from './components/PortfolioDisplay';
+import Dashboard from './components/Dashboard';
 
 function App() {
-  const titleText = "Welcome to Andrew's Website".split(" ");
-  const [isVisible, setIsVisible] = useState(true);
+  const titleText = "Welcome to Andrew's Website!".split(" ");
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       console.log('Scroll position:', window.scrollY);
-      if (window.scrollY > 10) {
-        setIsVisible(false);
-      } else {
+      if (window.scrollY > 120) {
         setIsVisible(true);
+      } else {
+        setIsVisible(false);
       }
     };
 
@@ -29,18 +30,14 @@ function App() {
 
   return (
     <>
-    
-      {/* Animates out "Welcome to Andrew's Website" */}
-      <FullNameTitleText titleText={titleText} isVisible={isVisible} />
-
-      {/* Arrow down icon */}
-
-      <div>
-        <p>HELLO</p>
-        <div className="flex justify-center">
-          <img src={reactLogo} alt="React Logo" className="" />
-          <img src={viteLogo} alt="Vite Logo" className="" />
+      <div className="main-container">
+        <Dashboard />
+        <div className="intro-background-container">
+          {/* Animates out "Welcome to Andrew's Website" */}
+          <FullNameTitleText titleText={titleText} />
         </div>
+        {/* Portfolio Display */}
+        <PortfolioDisplay isVisible={isVisible} />
       </div>
     </>
   )

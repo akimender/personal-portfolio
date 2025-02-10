@@ -8,7 +8,7 @@ const PortfolioDisplay = ({ isProjectsVisible }) => {
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isProjectsVisible ? 1 : 0 }}
-                transition={{ duration: 1.5 }}
+                transition={{ duration: 2 }}
             >
                 <h1>Projects</h1>
                 <div class="portfolio-container">

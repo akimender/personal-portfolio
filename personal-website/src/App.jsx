@@ -24,7 +24,7 @@ function App() {
         setIsProjectsVisible(true);
       }
 
-      if (window.scrollY > 770) {
+      if (window.scrollY > 750) {
         setIsSkillsVisible(true);
       }
 

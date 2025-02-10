@@ -86,12 +86,12 @@ p {
 }
 
 .contact-container {
-  background-color: rgba(36, 36, 36);
+  background-color: #1a1a1a;
   display: flex;
   flex-direction: column;
-  height: 15vw;
+  height: 20vw;
   width: 100vw;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-grow: 1;
 }

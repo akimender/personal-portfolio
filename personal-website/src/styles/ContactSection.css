@@ -1,0 +1,40 @@
+.contact-logo-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    top: 0;
+}
+
+.info-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#gmail-logo {
+    width: 130px;
+    height: 90px;
+    transition: transform 0.2s;
+    margin: 0px 50px 10px 40px;
+}
+
+#linkedin-logo {
+    width: 110px;
+    height: 110px;
+    transition: transform 0.2s;
+    margin: 0px 40px 0px 50px;
+}
+
+#github-logo {
+    width: 102px;
+    height: 102px;
+    transition: transform 0.2s;
+    margin: 0px 40px 5px 30px;
+}
+
+.clickable-image:hover {
+    transform: scale(1.1); /* Optional: Slightly enlarge the image on hover */
+}

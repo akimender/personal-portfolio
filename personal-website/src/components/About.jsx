@@ -7,7 +7,7 @@ const About = ({ isAboutVisible }) => {
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: isAboutVisible ? 1 : 0 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 2 }}
         >
             <h1>About Me</h1>
             <div class="about-text-container">

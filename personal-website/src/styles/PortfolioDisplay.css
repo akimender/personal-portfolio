@@ -1,16 +1,121 @@
+h4 {
+    font-size: 22px;
+}
+
 .portfolio-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
-    gap: 20px; /* Space between grid items */
+    gap: 25px; /* Space between grid items */
     justify-content: center;
     align-items: center;
 }
 
 .portfolio-item {
-    background-color: lightgrey; /* Example background color */
-    width: 40vh;
-    height: 35vh;
-    padding: 20px; /* Example padding */
+    margin: 5px;
+    width: 44vh;
+    height: 25vh;
     border-radius: 8px; /* Example border radius */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Example box shadow */
+}
+
+.portfolio-item-header {
+    background-color: rgb(38, 38, 38); /* Light-colored background */
+    width: 100%;
+    height: 20%; /* Top 1/4th of the portfolio item */
+    position: relative; /* Position it absolutely within the portfolio item */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
+    display: flex; /* Use flexbox for centering text */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    padding: 10px; /* Optional padding for text */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    z-index: 1;
+}
+
+.portfolio-item-body {
+    width: 100%;
+    height: 80%; /* Top 1/4th of the portfolio item */
+    position: relative; /* Position it absolutely within the portfolio item */
+    bottom: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
+    display: flex; /* Use flexbox for centering text */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    overflow: hidden;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.portfolio-item-body img {
+    max-width: 150%;
+    max-height: 150%;
+    object-fit: cover;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    overflow: hidden;
+}
+
+.portfolio-item-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(214, 214, 214, 0.1); /* Light greyish background with low opacity */
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 0; /* Ensure it is behind the overlays */
+}
+
+.portfolio-item-body:hover::before {
+    opacity: 1;
+}
+
+.portfolio-item-body .overlay-github {
+    position: absolute;
+    bottom: 1vh;
+    left: 4vh;
+    width: 40%;
+    height: 40%;
+    background: url('github-logo.png') no-repeat center center; /* Replace with your PNG image */
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    filter: brightness(1.5) contrast(1.2);
+}
+
+.portfolio-item-body .overlay-link {
+    position: absolute;
+    bottom: 1vh;
+    right: 4vh;
+    width: 40%;
+    height: 40%;
+    background: url('link-logo.png') no-repeat center center; /* Replace with your PNG image */
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+    filter: brightness(1.5) contrast(1.2);
+}
+
+.portfolio-item-body:hover .overlay-github {
+    opacity: 0.5;
+}
+
+.portfolio-item-body:hover .overlay-link {
+    opacity: 0.5;
+}
+
+#polls-website {
+    width: 35vh;
+}
+
+#movie-review {
+    width: 150%;
+    height: auto;
 }

@@ -1,0 +1,19 @@
+.about-text-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 0 10vw;
+  width: 70%;
+}
+
+.about-text-container p {
+    flex: 1;
+}
+
+.about-text-container img {
+    width: 30%;
+    height: auto;
+    border-radius: 8px;
+}

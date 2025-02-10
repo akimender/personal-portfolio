@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import '../styles/About.css';
 
 const About = ({ isAboutVisible }) => {
     return (
@@ -9,7 +10,13 @@ const About = ({ isAboutVisible }) => {
             transition={{ duration: 1.5 }}
         >
             <h1>About Me</h1>
-            <p>Welcome to my personal website! Here you can learn more about me and my work.</p>
+            <div class="about-text-container">
+                <p>
+                    Hi! I'm Andrew, a sophomore studying Applied Math + CS at Brown, and I'm developing my skills in software development, machine learning, and algorithmic problem solving! I'm passionate about applying my technical skills to real-world challenges and creating innovative solutions! I'm always curious to learn about applying mathematical techniques to overcoming challenges and creating cool stuff!
+                </p>
+
+                <img src="andrew-pose.jpg" alt="Andrew Kim" />
+            </div>
         </motion.div>
     );
 };

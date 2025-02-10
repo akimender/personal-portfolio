@@ -4,7 +4,6 @@ import '../styles/LanguagesScroll.css';
 const LanguagesScroll = () => {
     return (
         <div>
-            <h3>Languages</h3>
             <div className="languages-container">
                 <div className="logo-scroll">
                     <div className="logo-scroll__wrapper">

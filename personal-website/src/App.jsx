@@ -14,15 +14,21 @@ import Skills from './components/Skills';
 
 function App() {
   const [isAboutVisible, setIsAboutVisible] = useState(false);
+  const [isSkillsVisible, setIsSkillsVisible] = useState(false);
   const [isProjectsVisible, setIsProjectsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       console.log('Scroll position:', window.scrollY);
-      if (window.scrollY > 450) {
+      if (window.scrollY > 1400) {
         setIsProjectsVisible(true);
       }
-      if (window.scrollY > 100) {
+
+      if (window.scrollY > 770) {
+        setIsSkillsVisible(true);
+      }
+
+      if (window.scrollY > 70) {
         setIsAboutVisible(true);
       }
     };
@@ -45,7 +51,7 @@ function App() {
         </div>
 
         <div className="skills-background-container">
-          <Skills />
+          <Skills isSkillsVisible={isSkillsVisible} />
         </div>
 
         <div className="portfolio-background-container">

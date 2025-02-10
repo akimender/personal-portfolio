@@ -15,9 +15,9 @@ const Dashboard = () => {
                 <ul>
                     <li onClick={() => scrollToPosition(0)}>Home</li>
                     <li onClick={() => scrollToPosition(650)}>About</li>
-                    <li onClick={() => scrollToPosition(900)}>Skills</li>
-                    <li onClick={() => scrollToPosition(1100)}>Projects</li>
-                    <li onClick={() => scrollToPosition(1600)}>Contact</li>
+                    <li onClick={() => scrollToPosition(1300)}>Skills</li>
+                    <li onClick={() => scrollToPosition(2000)}>Projects</li>
+                    <li onClick={() => scrollToPosition(3000)}>Contact</li>
                 </ul>
             </nav>
         </div>

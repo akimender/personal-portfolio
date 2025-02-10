@@ -8,7 +8,7 @@ const IntroScreen = () => {
             <ParticlesBackground id="tsparticles" />
             
             <img
-                src="/andrew-selfie.jpg"
+                src="andrew-selfie.jpg"
                 alt="Selfie of Andrew Kim"
                 style={{
                     width: "300px",

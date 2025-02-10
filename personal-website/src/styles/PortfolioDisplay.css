@@ -81,7 +81,7 @@ h4 {
     left: 4vh;
     width: 40%;
     height: 40%;
-    background: url('github-logo.png') no-repeat center center; /* Replace with your PNG image */
+    background: url('/github-logo.png') no-repeat center center; /* Replace with your PNG image */
     background-size: contain;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -95,7 +95,7 @@ h4 {
     right: 4vh;
     width: 40%;
     height: 40%;
-    background: url('link-logo.png') no-repeat center center; /* Replace with your PNG image */
+    background: url('/link-logo.png') no-repeat center center; /* Replace with your PNG image */
     background-size: contain;
     opacity: 0;
     transition: opacity 0.2s ease;

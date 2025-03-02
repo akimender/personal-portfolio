@@ -88,6 +88,22 @@ const PortfolioDisplay = ({ isProjectsVisible }) => {
                             </a>
                         </div>
                     </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-item-header">
+                            <h4>BMC Website</h4>
+                        </div>
+                        <div class="portfolio-item-body">
+                            <img src="brown-marketing.jpg" alt="Brown Marketing" />
+                            <a href="https://github.com/akimender/brown-marketing" target="_blank" rel="noopener noreferrer">
+                                <div className="overlay-github">
+                                </div>
+                            </a>
+                            <a href="http://www.brownmarketingclub.com/" target="_blank" rel="noopener noreferrer">
+                                <div className="overlay-link">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </motion.div>
         </div>

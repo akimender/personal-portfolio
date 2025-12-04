@@ -12,7 +12,7 @@ const About = ({ isAboutVisible }) => {
             <h1>About Me</h1>
             <div class="about-text-container">
                 <p>
-                    Hi! I'm Andrew, a student studying Applied Math + Computer Science at Brown, and I'm developing my skills in software development, machine learning, and algorithmic problem solving! I'm passionate about applying my technical skills to real-world challenges and creating innovative solutions! I'm always curious to learn about applying mathematical techniques to overcoming challenges and creating cool stuff!
+                    Hi, I'm Andrew. I'm studying Applied Math and Computer Science at Brown, where I focus on software development, machine learning, and algorithmic thinking. I love exploring how mathematical intuition and modern computation can be used to solve practical problems and bring creative ideas to life. I am always excited to learn, build, and take on new challenges.
                 </p>
 
                 <img src="andrew-pose.jpg" alt="Andrew Kim" />

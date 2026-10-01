@@ -60,13 +60,17 @@
     transform: scale(1.00); /* Slightly enlarges logo when hovered */
 }
 
+.logo-spacer {
+    width: 50px;
+}
+
 /* Infinite scroll animation */
 @keyframes scroll {
     from {
-        transform: translateX(0); /* Animation start position */
+        transform: translateX(var(--scroll-start)); /* Animation start position */
     }
     to {
-        transform: translateX(-50%); /* Animation end position */
+        transform: translateX(var(--scroll-end)); /* Animation end position */
     }
 }
 

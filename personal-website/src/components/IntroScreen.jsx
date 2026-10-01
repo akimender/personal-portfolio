@@ -1,28 +1,20 @@
-import React from 'react';
 import ParticlesBackground from './ParticlesBackground';
 import FullNameTitleText from './FullNameTitleText';
+import { asset } from '../utils/asset';
+import '../styles/IntroScreen.css';
 
-const IntroScreen = () => {
-    return (
-        <div className="intro-screen">
-            <ParticlesBackground id="tsparticles" />
-            
-            <img
-                src="andrew-selfie.jpg"
-                alt="Selfie of Andrew Kim"
-                style={{
-                    width: "300px",
-                    height: "300px",
-                    borderRadius: "50%",
-                    border: "2px white solid",
-                    objectFit: "cover",
-                }}
-                className="no-select"
-            />
+const IntroScreen = () => (
+    <div className="intro-screen">
+        <ParticlesBackground id="tsparticles" />
 
-            <FullNameTitleText />
-        </div>
-    );
-};
+        <img
+            src={asset('andrew-selfie.jpg')}
+            alt="Selfie of Andrew Kim"
+            className="intro-selfie no-select"
+        />
+
+        <FullNameTitleText />
+    </div>
+);
 
 export default IntroScreen;

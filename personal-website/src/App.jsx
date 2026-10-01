@@ -1,8 +1,4 @@
-import { useEffect, useState } from 'react';
 import './App.css';
-import { motion, useInView } from 'framer-motion';
-
-// COMPONENT IMPORTS
 import PortfolioDisplay from './components/PortfolioDisplay';
 import Dashboard from './components/Dashboard';
 import ContactSection from './components/ContactSection';
@@ -11,57 +7,28 @@ import About from './components/About';
 import Skills from './components/Skills';
 
 function App() {
-  const [isAboutVisible, setIsAboutVisible] = useState(false);
-  const [isSkillsVisible, setIsSkillsVisible] = useState(false);
-  const [isProjectsVisible, setIsProjectsVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      console.log('Scroll position:', window.scrollY);
-      if (window.scrollY > 1400) {
-        setIsProjectsVisible(true);
-      }
-
-      if (window.scrollY > 750) {
-        setIsSkillsVisible(true);
-      }
-
-      if (window.scrollY > 70) {
-        setIsAboutVisible(true);
-      }
-    };
-
-    // Add event listener to handle scroll event
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll); // Removes event listener after user scrolls
-  }, []);
-
   return (
-    <>
-      <div className="main-container">
-        <Dashboard />
-        <div className="intro-background-container">
-          <IntroScreen />
-        </div>
+    <div className="main-container">
+      <Dashboard />
+      <section id="home" className="intro-background-container">
+        <IntroScreen />
+      </section>
 
-        <div className="about-background-container">
-          <About isAboutVisible={isAboutVisible} />
-        </div>
+      <section id="about" className="about-background-container">
+        <About />
+      </section>
 
-        <div className="skills-background-container">
-          <Skills isSkillsVisible={isSkillsVisible} />
-        </div>
+      <section id="skills" className="skills-background-container">
+        <Skills />
+      </section>
 
-        <div className="portfolio-background-container">
-          {/* Portfolio Display */}
-          <PortfolioDisplay isProjectsVisible={isProjectsVisible} />
-        </div>
+      <section id="projects" className="portfolio-background-container">
+        <PortfolioDisplay />
+      </section>
 
-        <ContactSection />
-      </div>
-      
-    </>
-  )
+      <ContactSection />
+    </div>
+  );
 }
 
-export default App
+export default App;

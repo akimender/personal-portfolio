@@ -14,6 +14,14 @@
     align-items: center;
 }
 
+.info-part--gmail {
+    margin-top: 10px;
+}
+
+.info-part--github {
+    margin-top: 1px;
+}
+
 #gmail-logo {
     width: 130px;
     height: 90px;

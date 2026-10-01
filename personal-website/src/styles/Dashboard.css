@@ -35,10 +35,13 @@
 
 .dashboard-nav li {
     margin: 0 5px; /* Add some margin between the links */
-    cursor: pointer;
+}
+
+.dashboard-nav a {
+    font-weight: inherit;
     color: white; /* Ensure the text color is visible */
 }
 
-.dashboard-nav li:hover {
+.dashboard-nav a:hover {
     color: #646cff; /* Change the text color on hover */
 }

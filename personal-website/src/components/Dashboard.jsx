@@ -1,27 +1,25 @@
-import React from 'react';
 import '../styles/Dashboard.css';
 
-const Dashboard = () => {
-    const scrollToPosition = (y) => {
-        window.scrollTo({
-            top: y,
-            behavior: 'smooth'
-        });
-    }
+const NAV_ITEMS = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'contact', label: 'Contact' },
+];
 
-    return (
-        <div className="dashboard-container">
-            <nav className="dashboard-nav">
-                <ul>
-                    <li onClick={() => scrollToPosition(0)}>Home</li>
-                    <li onClick={() => scrollToPosition(650)}>About</li>
-                    <li onClick={() => scrollToPosition(1300)}>Skills</li>
-                    <li onClick={() => scrollToPosition(2000)}>Projects</li>
-                    <li onClick={() => scrollToPosition(3000)}>Contact</li>
-                </ul>
-            </nav>
-        </div>
-    );
-};
+const Dashboard = () => (
+    <header className="dashboard-container">
+        <nav className="dashboard-nav">
+            <ul>
+                {NAV_ITEMS.map(({ id, label }) => (
+                    <li key={id}>
+                        <a href={`#${id}`}>{label}</a>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    </header>
+);
 
 export default Dashboard;

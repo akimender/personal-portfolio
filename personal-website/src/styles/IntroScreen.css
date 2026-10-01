@@ -1,0 +1,7 @@
+.intro-selfie {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px white solid;
+    object-fit: cover;
+}
